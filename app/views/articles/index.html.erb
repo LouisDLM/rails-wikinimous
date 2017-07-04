@@ -1,0 +1,12 @@
+<div class="text-center">
+  <h1>All your Articles</h1>
+    <% @articles.each do |article| %>
+      <h2><%= link_to article.title, article_path(article.id) %></h2>
+      <ul class="list">
+        <li>Content: <%= article.content %></li>
+        <%= link_to "Remove Article", article_path(article), method: :delete, class: "btn btn-danger"%>
+      </ul>
+    <% end %>
+
+  <%= link_to "add Article", new_article_path, class: "btn btn-success" %>
+</div>
